@@ -1,15 +1,14 @@
 /* ===========================
-   style.css - CineVerse (Samuel)
+   style.css - CineVerse (Samuel) - Versión Marvel
    =========================== */
 
-/* 0) Reset sencillo y variables */
 :root{
-  --bg: #0f1724;          /* color de fondo general */
-  --card: #0b1220;        /* fondo de tarjetas */
-  --accent: #e03131;      /* color acento (rojo) */
-  --muted: #94a3b8;       /* texto secundario */
-  --text: #e6eef8;        /* texto principal */
-  --max-width: 1100px;    /* ancho máximo del contenido */
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #d32f2f;   /* rojo Marvel */
+  --muted: #94a3b8;
+  --text: #e6eef8;
+  --max-width: 1100px;
   --gap: 1rem;
 }
 
