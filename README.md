@@ -1,2 +1,7 @@
-# CineVerseSam7
-Un rincón donde encontraras todo referente al cine :p
+# CineVerseSam7 - Universo Marvel
+
+Un espacio dedicado al análisis de las películas del **Universo Cinematográfico de Marvel (UCM)**.
+Aquí encontrarás reseñas, análisis visuales y cronología de los eventos más importantes
+del universo Marvel en la gran pantalla.
+
+Creado por **Samuel SC** 🎬🦸‍♂️
