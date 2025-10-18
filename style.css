@@ -342,3 +342,26 @@ footer {
   width: 90%; /* se ajusta al ancho del dispositivo */
   margin: 0 auto;
 }
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Pantallas pequeñas (celulares) */
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  .timeline-event img {
+    width: 120px;
+    height: 80px;
+  }
+}
