@@ -1,367 +1,641 @@
-/* ===========================
-   style.css - CineVerseSam7 (Versión MARVEL)
-   Autor: Samuel SC
-   =========================== */
+    :root {
+      --bg: #0a0a0a;              /* fondo negro tipo cine */
+      --card: #121212;            /* fondo de tarjetas */
+      --accent: #d32f2f;          /* rojo Marvel */
+      --accent-glow: #ff0000;     /* brillo rojo intenso */
+      --gold: #f4c542;            /* dorado tipo Iron Man */
+      --muted: #a0a0a0;           /* texto secundario */
+      --text: #ffffff;            /* texto principal */
+      --max-width: 1100px;
+      --gap: 1rem;
+    }
 
-/* 0) Variables de color y configuración general */
-:root {
-  --bg: #0a0a0a;              /* fondo negro tipo cine */
-  --card: #121212;            /* fondo de tarjetas */
-  --accent: #d32f2f;          /* rojo Marvel */
-  --accent-glow: #ff0000;     /* brillo rojo intenso */
-  --gold: #f4c542;            /* dorado tipo Iron Man */
-  --muted: #a0a0a0;           /* texto secundario */
-  --text: #ffffff;            /* texto principal */
-  --max-width: 1100px;
-  --gap: 1rem;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    /* 1) Fondo y fuente global */
+    html, body {
+      height: 100%;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1a1a1a 0%, #000 100%);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
 
-/* 1) Fondo y fuente global */
-html, body {
-  height: 100%;
-  font-family: 'Inter', system-ui, sans-serif;
-  background: radial-gradient(circle at top, #1a1a1a 0%, #000 100%);
-  color: var(--text);
-}
+    /* 2) Header y navegación MEJORADO */
+    header {
+      background: linear-gradient(135deg, #000 0%, #d32f2f 100%);
+      padding: 0;
+      box-shadow: 0 0 30px rgba(211, 47, 47, 0.6);
+      border-bottom: 3px solid var(--gold);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
 
-/* 2) Header y navegación */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(90deg, #000, #d32f2f 80%);
-  padding: 1rem 2rem;
-  box-shadow: 0 0 20px rgba(211, 47, 47, 0.4);
-  border-bottom: 2px solid var(--accent);
-}
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.8rem 2rem;
+      position: relative;
+    }
 
-header h1 {
-  font-family: 'Audiowide', sans-serif;
-  font-size: 1.9rem;
-  letter-spacing: 1px;
-  color: var(--text);
-  text-shadow: 0 0 10px var(--accent-glow);
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-nav a {
-  color: var(--gold);
-  text-decoration: none;
-  margin-left: 1rem;
-  padding: 0.5rem 0.8rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-nav a:hover {
-  color: white;
-  background: rgba(211, 47, 47, 0.2);
-  box-shadow: 0 0 10px var(--accent-glow);
-  transform: translateY(-3px);
-}
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: radial-gradient(circle, var(--gold) 0%, var(--accent) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px var(--gold);
+      animation: pulse 3s infinite alternate;
+    }
 
-/* 3) Sección principal / hero */
-.hero {
-  padding: 2rem;
-  margin: 2rem auto;
-  background: linear-gradient(180deg, rgba(255,0,0,0.1), rgba(0,0,0,0.8));
-  border-left: 4px solid var(--accent);
-  border-radius: 12px;
-  box-shadow: 0 4px 25px rgba(255,0,0,0.15);
-  max-width: var(--max-width);
-}
-.hero h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-  color: var(--gold);
-  text-shadow: 0 0 8px rgba(255, 255, 0, 0.4);
-}
-.hero p {
-  line-height: 1.6;
-  color: var(--muted);
-}
+    .logo-icon::before {
+      content: "M";
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.8rem;
+      color: #000;
+      font-weight: bold;
+    }
 
-/* 4) Tarjetas de películas o personajes */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.2rem;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2rem;
-}
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 15px var(--gold);
+        transform: scale(1);
+      }
+      100% {
+        box-shadow: 0 0 25px var(--accent-glow);
+        transform: scale(1.05);
+      }
+    }
 
-.card {
-  background: linear-gradient(180deg, #1c1c1c, #0d0d0d);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(211,47,47,0.2);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 0 25px rgba(255,0,0,0.5);
-}
+    header h1 {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      color: var(--text);
+      text-shadow: 0 0 15px var(--accent-glow);
+      background: linear-gradient(90deg, var(--gold), var(--text));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+    }
 
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 2px solid var(--accent);
-}
+    header h1::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
 
-.card h3 {
-  color: var(--gold);
-  font-size: 1.2rem;
-  margin: 0.8rem 0 0.3rem 0.8rem;
-}
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
 
-.card p {
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.4;
-  padding: 0 0.8rem 1rem 0.8rem;
-}
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-.badge {
-  display: inline-block;
-  background: rgba(255,0,0,0.2);
-  color: var(--accent);
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  margin: 0.6rem 0 0 0.8rem;
-  font-weight: bold;
-}
+    nav a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
 
-/* 5) Footer */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  background: linear-gradient(90deg, #d32f2f, #000);
-  color: white;
-  box-shadow: 0 -2px 10px rgba(255,0,0,0.4);
-}
+    nav a:hover {
+      color: var(--gold);
+      background: rgba(211, 47, 47, 0.3);
+      box-shadow: 0 0 15px var(--accent-glow);
+      transform: translateY(-3px);
+    }
 
-/* 6) Responsive */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-  nav a {
-    margin: 0.5rem;
-  }
-  .hero {
-    padding: 1.2rem;
-  }
-}
-.timeline-section {
-  text-align: center;
-  margin: 4rem auto;
-  max-width: var(--max-width);
-  padding: 2rem;
-}
+    nav a:hover::before {
+      left: 100%;
+    }
 
-.timeline-section h2 {
-  color: var(--gold);
-  margin-bottom: 1.5rem;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
+    .marvel-strip {
+      height: 5px;
+      background: linear-gradient(90deg, 
+        #000 0%, 
+        var(--accent) 20%, 
+        var(--gold) 40%, 
+        var(--accent) 60%, 
+        var(--gold) 80%, 
+        #000 100%);
+      position: relative;
+      overflow: hidden;
+    }
 
-/* Contenedor general */
-.timeline-container {
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) #111;
-  padding-bottom: 1rem;
-}
+    .marvel-strip::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+      animation: shimmer 3s infinite;
+    }
 
-/* Línea horizontal */
-.timeline-scroll {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: relative;
-  gap: 2.5rem;
-  padding: 1rem 2rem;
-  border-top: 3px solid var(--accent);
-}
+    @keyframes shimmer {
+      0% {
+        left: -100%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
 
-/* Cada evento */
-.timeline-event {
-  position: relative;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 1rem 1.2rem;
-  min-width: 180px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(255,0,0,0.15);
-}
+    /* 3) Sección principal / hero */
+    .hero {
+      padding: 2rem;
+      margin: 8rem auto 2rem;
+      background: linear-gradient(180deg, rgba(255,0,0,0.1), rgba(0,0,0,0.8));
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(255,0,0,0.15);
+      max-width: var(--max-width);
+    }
+    .hero h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+      text-shadow: 0 0 8px rgba(255, 255, 0, 0.4);
+    }
+    .hero p {
+      line-height: 1.6;
+      color: var(--muted);
+    }
 
-/* Punto de conexión */
-.timeline-event::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 14px;
-  height: 14px;
-  background-color: var(--accent);
-  border-radius: 50%;
-  box-shadow: 0 0 12px var(--accent);
-  transition: all 0.3s ease;
-}
+    .section-title {
+      text-align: center;
+      margin: 2rem 0;
+    }
 
-/* Hover animado */
-.timeline-event:hover {
-  transform: scale(1.1);
-  background: rgba(255,0,0,0.15);
-  box-shadow: 0 0 25px rgba(255,0,0,0.4);
-}
-.timeline-event:hover::before {
-  background-color: var(--gold);
-  box-shadow: 0 0 18px var(--gold);
-}
+    .section-title h2 {
+      color: var(--gold);
+      font-size: 2rem;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      position: relative;
+      display: inline-block;
+    }
 
-/* Año */
-.timeline-event h3 {
-  color: var(--gold);
-  font-size: 1.2rem;
-  margin-bottom: 0.4rem;
-}
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 10%;
+      width: 80%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
 
-/* Nombre del proyecto */
-.timeline-event p {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
+    /* 4) Tarjetas de películas o personajes */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem;
+    }
 
-/* Scrollbar personalizado */
-.timeline-container::-webkit-scrollbar {
-  height: 10px;
-}
-.timeline-container::-webkit-scrollbar-thumb {
-  background-color: var(--accent);
-  border-radius: 10px;
-}
-@keyframes aparecerMarvel {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) scale(0.9);
-    filter: brightness(0.5);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-8px) scale(1.05);
-    filter: brightness(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: brightness(1);
-  }
-}
+    .card {
+      background: linear-gradient(180deg, #1c1c1c, #0d0d0d);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(211,47,47,0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 0 25px rgba(255,0,0,0.5);
+    }
 
-/* Aplica la animación a cada evento */
-.timeline-event {
-  opacity: 0;
-  animation: aparecerMarvel 0.9s ease forwards;
-}
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 2px solid var(--accent);
+    }
 
-/* Secuencia (cada evento aparece después del anterior) */
-.timeline-event:nth-child(1) { animation-delay: 0.2s; }
-.timeline-event:nth-child(2) { animation-delay: 0.5s; }
-.timeline-event:nth-child(3) { animation-delay: 0.8s; }
-.timeline-event:nth-child(4) { animation-delay: 1.1s; }
-.timeline-event:nth-child(5) { animation-delay: 1.4s; }
-.timeline-event:nth-child(6) { animation-delay: 1.7s; }
+    .card h3 {
+      color: var(--gold);
+      font-size: 1.2rem;
+      margin: 0.8rem 0 0.3rem 0.8rem;
+    }
 
-/* Efecto de “brillo” al pasar el mouse */
-.timeline-event:hover {
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
-  background: linear-gradient(180deg, rgba(255,0,0,0.25), rgba(255,255,255,0.05));
-  transform: scale(1.1);
-  transition: all 0.3s ease;
-}
-.timeline-event:hover::before {
-  animation: brillar 1.5s infinite alternate ease-in-out;
-}
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.4;
+      padding: 0 0.8rem 1rem 0.8rem;
+      flex-grow: 1;
+    }
 
-/* Brillo pulsante en los puntos */
-@keyframes brillar {
-  0% { box-shadow: 0 0 12px var(--accent); }
-  100% { box-shadow: 0 0 25px var(--gold); background-color: var(--gold); }
-}
-.timeline-event img {
-  width: 160px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 0.6rem;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 0 10px rgba(255,0,0,0.2);
-  transition: all 0.3s ease;
-}
+    .badge {
+      display: inline-block;
+      background: rgba(255,0,0,0.2);
+      color: var(--accent);
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin: 0.6rem 0 0 0.8rem;
+      font-weight: bold;
+    }
 
-/* Efecto hover (brillo Marvel) */
-.timeline-event:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255,0,0,0.6);
-  border-color: var(--accent);
-}
+    /* 5) Sección de personajes */
+    .characters-section {
+      margin: 3rem auto;
+      padding: 2rem;
+      max-width: var(--max-width);
+    }
+        
+    .characters-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--gold);
+      font-family: 'Audiowide', cursive;
+      font-size: 2rem;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+        
+    .characters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+        
+    .character-card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      border: 2px solid #333;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+        
+    .character-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(230, 36, 41, 0.4);
+      border-color: var(--accent);
+    }
+        
+    .character-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 2px solid var(--accent);
+    }
+        
+    .character-name {
+      padding: 1rem;
+      font-family: 'Audiowide', cursive;
+      color: #fff;
+      font-size: 1.1rem;
+      background-color: #151515;
+    }
+        
+    .character-actor {
+      padding: 0.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      background-color: #1a1a1a;
+    }
 
-/* Ajuste general de los eventos */
-.timeline-event {
-  min-width: 200px;
-  max-width: 220px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 12px;
-  padding: 1rem;
+    .character-description {
+      padding: 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.4;
+      background-color: #1a1a1a;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-}
+    /* 6) Timeline */
+    .timeline-section {
+      text-align: center;
+      margin: 4rem auto;
+      max-width: var(--max-width);
+      padding: 2rem;
+    }
 
-.container {
-  max-width: 1100px;
-  width: 90%; /* se ajusta al ancho del dispositivo */
-  margin: 0 auto;
-}
+    .timeline-section h2 {
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
 
-/* Pantallas medianas (tablets) */
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    /* Contenedor general */
+    .timeline-container {
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) #111;
+      padding-bottom: 1rem;
+      cursor: grab;
+    }
 
-/* Pantallas pequeñas (celulares) */
-@media (max-width: 520px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+    .timeline-container:active {
+      cursor: grabbing;
+    }
 
-  header h1 {
-    font-size: 1.3rem;
-  }
+    /* Línea horizontal */
+    .timeline-scroll {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      gap: 2.5rem;
+      padding: 1rem 2rem;
+      border-top: 3px solid var(--accent);
+      min-width: max-content;
+    }
 
-  .timeline-event img {
-    width: 120px;
-    height: 80px;
-  }
-}
+    /* Cada evento */
+    .timeline-event {
+      position: relative;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      min-width: 180px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 8px rgba(255,0,0,0.15);
+      opacity: 0;
+      animation: aparecerMarvel 0.9s ease forwards;
+    }
+
+    /* Punto de conexión */
+    .timeline-event::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 14px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--accent);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-event img {
+      width: 160px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 10px rgba(255,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    /* Año */
+    .timeline-event h3 {
+      color: var(--gold);
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* Nombre del proyecto */
+    .timeline-event p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Animaciones */
+    @keyframes aparecerMarvel {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+        filter: brightness(0.5);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-8px) scale(1.05);
+        filter: brightness(1.2);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: brightness(1);
+      }
+    }
+
+    /* Secuencia (cada evento aparece después del anterior) */
+    .timeline-event:nth-child(1) { animation-delay: 0.2s; }
+    .timeline-event:nth-child(2) { animation-delay: 0.5s; }
+    .timeline-event:nth-child(3) { animation-delay: 0.8s; }
+    .timeline-event:nth-child(4) { animation-delay: 1.1s; }
+    .timeline-event:nth-child(5) { animation-delay: 1.4s; }
+    .timeline-event:nth-child(6) { animation-delay: 1.7s; }
+    .timeline-event:nth-child(7) { animation-delay: 2.0s; }
+    .timeline-event:nth-child(8) { animation-delay: 2.3s; }
+    .timeline-event:nth-child(9) { animation-delay: 2.6s; }
+    .timeline-event:nth-child(10) { animation-delay: 2.9s; }
+    .timeline-event:nth-child(11) { animation-delay: 3.2s; }
+    .timeline-event:nth-child(12) { animation-delay: 3.5s; }
+
+    /* Efecto de “brillo” al pasar el mouse */
+    .timeline-event:hover {
+      transform: scale(1.1);
+      background: rgba(255,0,0,0.15);
+      box-shadow: 0 0 25px rgba(255,0,0,0.4);
+    }
+    .timeline-event:hover::before {
+      background-color: var(--gold);
+      box-shadow: 0 0 18px var(--gold);
+      animation: brillar 1.5s infinite alternate ease-in-out;
+    }
+
+    .timeline-event:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,0,0,0.6);
+      border-color: var(--accent);
+    }
+
+    /* Brillo pulsante en los puntos */
+    @keyframes brillar {
+      0% { box-shadow: 0 0 12px var(--accent); }
+      100% { box-shadow: 0 0 25px var(--gold); background-color: var(--gold); }
+    }
+
+    /* Scrollbar personalizado */
+    .timeline-container::-webkit-scrollbar {
+      height: 10px;
+    }
+    .timeline-container::-webkit-scrollbar-track {
+      background: #111;
+      border-radius: 10px;
+    }
+    .timeline-container::-webkit-scrollbar-thumb {
+      background-color: var(--accent);
+      border-radius: 10px;
+    }
+
+    /* 7) Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      background: linear-gradient(90deg, #d32f2f, #000);
+      color: white;
+      box-shadow: 0 -2px 10px rgba(255,0,0,0.4);
+    }
+
+    /* 8) Responsive */
+    .container {
+      max-width: var(--max-width);
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    /* Pantallas medianas (tablets) */
+    @media (max-width: 900px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .timeline-event img {
+        width: 140px;
+        height: 90px;
+      }
+      
+      header h1 {
+        font-size: 1.7rem;
+      }
+    }
+
+    /* Pantallas pequeñas (celulares) */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+      
+      .hero {
+        padding: 1.2rem;
+        margin: 9rem auto 1rem;
+      }
+      
+      .characters-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      
+      .character-img {
+        height: 180px;
+      }
+      
+      .timeline-event {
+        min-width: 150px;
+      }
+      
+      .timeline-event img {
+        width: 120px;
+        height: 80px;
+      }
+      
+      .timeline-scroll {
+        gap: 1.5rem;
+        padding: 1rem;
+      }
+      
+      nav a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Pantallas muy pequeñas */
+    @media (max-width: 400px) {
+      .characters-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .header-content {
+        padding: 0.8rem;
+      }
+      
+      nav a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+      }
+      
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .logo-icon::before {
+        font-size: 1.5rem;
+      }
+    }
