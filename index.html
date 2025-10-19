@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="img/Marvel.png" type="image/x-icon">
+  <link rel="icon" href="img/CineVerseMarvel.png" type="image/x-icon">
   <meta charset="UTF-8">
   <title>CineVerseMarvel - Proyectos de Marvel</title>
   <link rel="stylesheet" href="style.css">
@@ -16,19 +16,25 @@
     timelineContainer.scrollLeft += e.deltaY * 0.5; // velocidad del scroll
   });
 </script>
-  <header>
-    <h1>CineVerseMarvel - Proyectos de Marvel</h1>
-    <nav>
-      <a href=>Películas</a>
-      <a href="">Series</a>
-      <a href=>Personajes</a>
-      <a href=>Cronología</a>
-    </nav>
+    <header>
+    <div class="header-content">
+      <div class="logo-container">
+        <div class="logo-icon"></div>
+        <h1>CineVerseMarvel</h1>
+      </div>
+      <nav>
+        <a href="#peliculas">Películas</a>
+        <a href="#series">Series</a>
+        <a href="#personajes">Personajes</a>
+        <a href="#cronologia">Cronología</a>
+      </nav>
+    </div>
+    <div class="marvel-strip"></div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <h2>Bienvenido al Multiverso Marvel</h2><br>
+      <h2>Bienvenido al Multiverso Marvel</h2>
       <p>
         En <strong>CineVerseMarvel</strong> exploraremos el Universo Cinematográfico de Marvel (UCM)
         y producciones fuera de este mismo universo. Analizamos las películas desde la narrativa, dirección,
@@ -37,120 +43,222 @@
       </p>
     </section>
 
+    <section id="peliculas" class="section-title">
+      <h2>Proyectos Ranking</h2>
+    </section>
+    
     <section class="grid">
       <div class="card">
-        <img src="img/Capitanamerica1944.jpg" alt="Capitán América 1944">
-        <span class="badge">1944</span>
-        <h3>Capitán América (Serial 1944)</h3>
-        <p>Una serie de misteriosos asesinatos llama la atención del presidente de Estados Unidos, 
-          quien entrena a Grant Gardner para convertirlo en un superhéroe. El Dr. Clinton Lyman 
-          le confía a Cyrus Maldor sus planes y que él es el responsable de los asesinatos. 
-          Maldor avisa a la policía, pero Lyman activa el Vibrador Dinámico y convierte a Maldor 
-          en el malvado Escarabajo. El Escarabajo huye del laboratorio y empieza a hacer el mal. 
-          Grant Gardner, ahora convertido en el Capitán América, va a derrotarlo.</p>
+        <img src="img/pel/xmen97.webp" alt="X-Men '97">
+        <span class="badge">2024</span>
+        <h3>X-Men '97</h3>
+        <p>
+          La banda de mutantes que usan sus extraños dones para proteger un mundo que los odia y teme, 
+          son desafiados como nunca antes y se ven obligados a enfrentarse a un nuevo futuro peligroso 
+          e inesperado.
+          <br><br>
+          Tormenta y Wolverine intentan continuar con los X-Men. Magneto se suma y quiere dar un paso 
+          al frente por Charles Xavier, mientras Siniestro aparece para intentar acabar con el equipo 
+          de héroes de una vez por todas.
+        </p>
       </div>
 
       <div class="card">
-        <img src="img/Marvel_superh.webp" alt="Marvel superhéroes 1966">
-        <span class="badge">1966</span>
-        <h3>Marvel superhéroes (1966)</h3>
-        <p>Protagonizada por 5 Súper-héroes de historieta de la casa Marvel Comics, 
-          que narra sus aventuras pero respetando el origen canónico de los cómics; 
-          sin recrear adaptaciones, con una animación completamente artesanal. 
-          Esta fue la primera y original serie de súper-héroes Marvel, otras serían realizadas 
-          pero independientemente, como El Hombre Araña (Producida un año después por la misma productora) 
-          ó Los Cuatro Fantásticos de Hanna-Barbera.</p>
+        <img src="img/pel/Captain_America_The_Winter_Soldier_Poster_3.webp" alt="Capitán América 2014">
+        <span class="badge">2014</span>
+        <h3>Capitán América: El Soldado del Invierno</h3>
+        <p>Dos años después de los catastróficos eventos ocurridos en Nueva York con ‘The Avengers‘, 
+          Captain America: The Winter Soldier presenta a Steven Rogers, alias el Capitán América, 
+          viviendo tranquilamente en Washington, D.C. e intentando adaptarse al mundo moderno. 
+          Pero cuando un colega de S.H.I.E.L.D. se ve amenazado, Steven se encuentra envuelto en una 
+          trama de intrigas que puede poner en riesgo el mundo entero.</p>
       </div>
 
       <div class="card">
-        <img src="img/4_fantasticos.webp" alt="Los Cuatro Fantásticos (1967)">
-        <span class="badge">1967</span>
-        <h3>Los Cuatro Fantásticos (1967)</h3>
-        <p>Cuatro científicos obtienen super poderes luego de ser víctimas de los rayos cósmicos.</p>
+        <img src="img/pel/WandaVision_-_Logo_oficial.webp" alt="WandaVisión">
+        <span class="badge">2021</span>
+        <h3>WandaVisión</h3>
+        <p>Marvel Studios' WandaVision combina el estilo cómico de situaciones clásicas con el Universo 
+          Cinematográfico de Marvel en el que Wanda Maximoff y Visión, dos seres superpoderosos que viven 
+          su vida suburbana ideal, comienzan a sospechar que no todo es lo que parece.</p>
+      </div>
+
+      <div class="card">
+        <img src="img/pel/Guardianes_de_la_Galaxia_Poster_en_Ingles.webp" alt="Guardianes de la Galaxia">
+        <span class="badge">2014</span>
+        <h3>Guardianes de la Galaxia</h3>
+        <p>Una épica aventura espacial llena de acción, Guardians of the Galaxy expande el Universo 
+          Cinematográfico de Marvel hacia el cosmos, donde un aventurero y temerario Peter Quill se 
+          encuentra a sí mismo como objeto de una implacable recompensa después de que robase un misterioso 
+          orbe buscado por Ronan, un poderoso villano con ambiciones que amenazan todo el universo.</p>
+      </div>
+
+      <div class="card">
+        <img src="img/pel/Black_Panther_Poster_October_2017.webp" alt="Black Panther">
+        <span class="badge">2018</span>
+        <h3>Pantera Negra</h3>
+        <p>Pantera Negra de Marvel Studios sigue a T'Challa , quien, tras los eventos de Capitán América: 
+          Civil War , regresa a su hogar en la aislada y tecnológicamente avanzada nación africana de Wakanda
+           para asumir el cargo de Rey. Sin embargo, cuando un antiguo enemigo reaparece, la valentía de 
+           T'Challa como Rey y Pantera Negra se pone a prueba al verse involucrado en un conflicto que pone 
+           en riesgo el destino de Wakanda y del mundo.</p>
+      </div>
+
+      <div class="card">
+        <img src="img/pel/Avenger_Endgame_Poster_Oficial.webp" alt="Avengers: Endgame">
+        <span class="badge">2019</span>
+        <h3>Avengers: Endgame</h3>
+        <p>Después de los eventos devastadores de ‘Avengers: Infinity War’, el universo está en ruinas 
+          debido a las acciones de Thanos, el Titán Loco. Con la ayuda de los aliados que quedaron, 
+          los Vengadores deben reunirse una vez más para deshacer sus acciones y restaurar el orden en 
+          el universo de una vez por todas, sin importar cuáles son las consecuencias que pueda tener.</p>
       </div>
     </section>
 
-    <section class="grid">
-  <div class="card">
-    <img src="img/Spiderman67.webp" alt="El Hombre Araña (1967)">
-    <span class="badge">1967</span>
-    <h3>El Hombre Araña (1967)</h3>
-    <p>La primer temporada de la serie habla de la lucha del (entonces) novel súper-héroe contra sus clásicos 
-      enemigos: Misterio, Dr. Octopus, Rino, El Camaleón, El Duende Verde, Escorpión, Electro, entre otros; 
-      y las eternas acusaciones de J.J. Jameson quién como es costumbre trata de hacer ver al Hombre Araña 
-      como una amenaza, y no como el bien-intencionado héroe que en realidad es. La segunda temporada ya 
-      habla del origen del personaje, sus primeras aventuras y la lucha con otros peligrosos criminales. 
-      Se omitió mucha visión oscura del personaje mostrándonos su etapa más original, tras la aparición de la 
-      serie Marvel Superhéroes.</p>
-  </div>
+    <section id="personajes" class="characters-section">
+      <h2>Los Mejores Personajes de Marvel</h2>
+      <div class="characters-grid">
+        <div class="character-card">
+          <img src="img/per/lokitom.webp" alt="Loki" class="character-img">
+          <div class="character-name">Loki</div>
+          <div class="character-actor">Tom Hiddleston</div>
+          <div class="character-description">
+            Loki es el Dios de la Travesura de Asgard, un poderoso embaucador asgardiano con habilidades mágicas 
+            y de cambio de forma.
+          </div>
+        </div>
+        
+        <div class="character-card">
+          <img src="img/per/capitanamericachris.jfif" alt="Capitán América" class="character-img">
+          <div class="character-name">Capitán América</div>
+          <div class="character-actor">Chris Evans</div>
+          <div class="character-description">
+            El Capitán América, cuyo nombre real es Steve Rogers, es un superhéroe conocido por ser un 
+            símbolo de justicia, valentía y patriotismo.
+          </div>
+        </div>
+        
+        <div class="character-card">
+          <img src="img/per/Wanda_Maximoff_-_Heroina.webp" alt="Bruja Escarlata" class="character-img">
+          <div class="character-name">Bruja Escarlata</div>
+          <div class="character-actor">Elizabeth Olsen</div>
+          <div class="character-description">
+            La Bruja Escarlata (Wanda Maximoff) es una hechicera de Marvel con la capacidad de alterar 
+            la realidad y la probabilidad.
+          </div>
+        </div>
 
-  <div class="card">
-    <img src="img/3_Dev_Adam.jpg" alt="El Santo y Capitán América vs. Spider-Man">
-    <span class="badge">1973</span>
-    <h3>El Santo y Capitán América vs. Spider-Man</h3>
-    <p>Estambul está bajo una ola de terror y crimen cuando Spiderman comienza a matar a la gente 
-      con sus superpoderes. Desesperado, un policía llama a los Estados Unidos para que vengan 
-      el Capitán América y El Santo, con la intención de detener el caos.</p>
-  </div>
+        <div class="character-card">
+          <img src="img/per/bptchalla.webp" alt="Pantera Negra" class="character-img">
+          <div class="character-name">Pantera Negra</div>
+          <div class="character-actor">Chadwich Boseman</div>
+          <div class="character-description">Pantera Negra es el título de T'Challa, el rey de la nación 
+            africana tecnológicamente avanzada de Wakanda. Tras una ceremonia, se le otorgan habilidades 
+            físicas sobrehumanas (fuerza, agilidad, sentidos) gracias a una hierba mística.
+          </div>
+        </div>
+        
+        <div class="character-card">
+          <img src="img/per/Wolverine_(7343567212)_(retouched).jpg" alt="Wolverine" class="character-img">
+          <div class="character-name">Wolverine</div>
+          <div class="character-actor">Hugh Jackman</div>
+          <div class="character-description">Wolverine (cuyo nombre real es James Howlett o Logan) 
+            es un mutante de Marvel conocido por su factor de curación acelerado, sentidos animalísticos 
+            y un esqueleto reforzado con adamantium, que incluye tres garras retráctiles en cada mano.
+          </div>
+        </div>
+        
+        <div class="character-card">
+          <img src="img/per/milesmorales.jpg" alt="Miles Morales" class="character-img">
+          <div class="character-name">Miles Morales</div>
+          <div class="character-actor">Shameik Moore</div>
+          <div class="character-description">
+            Miles Morales es un adolescente de ascendencia afroamericana y latina que se convirtió en 
+            Spider-Man después de ser mordido por una araña genéticamente modificada.
+          </div>
+        </div>
 
-  <div class="card">
-    <img src="img/Spiderman-1977-poster.webp" alt="El sorprendente Hombre Araña (1977)">
-    <span class="badge">1977</span>
-    <h3>El Sorprendente Hombre Araña (1977)</h3>
-    <p>El jovén fotógrafo Peter Parker es mordido por una araña radioactiva, cuya picadura le otorga 
-      sorprendentes superpoderes para defender a la ciudad del terrible crimen que asecha en las sombras</p>
-  </div>
-</section>
-<section class="timeline-section">
-  <h2>Línea del Tiempo del Multiverso Marvel</h2>
-  <div class="timeline-container">
-    <div class="timeline-scroll">
+        <div class="character-card">
+          <img src="img/per/tobey-maguire-protagonizo-peliculas-spiderman.jpg" alt="Tobey Maguire" class="character-img">
+          <div class="character-name">El Hombre Araña</div>
+          <div class="character-actor">Tobey Maguire</div>
+          <div class="character-description">
+            Un estudiante dotado pero socialmente torpe que, tras ser picado por una araña modificada 
+            genéticamente, obtiene superfuerza, agilidad, reflejos mejorados y la capacidad de lanzar 
+            telarañas y escalar paredes. 
+          </div>
+        </div>
 
-      <div class="timeline-event" data-year="1944">
-        <img src="img/Capitanamerica1944.jpg" alt="Capitán América 1944">
-        <h3>1944</h3>
-        <p>Capitán América (Serial)</p>
+        <div class="character-card">
+          <img src="img/per/iron-man-2008.webp" alt="Iron Man" class="character-img">
+          <div class="character-name">Iron Man</div>
+          <div class="character-actor">Robert Downey Jr.</div>
+          <div class="character-description">
+           Iron Man es el nombre de superhéroe de Tony Stark, un genio multimillonario, inventor y filántropo 
+           que utiliza una armadura tecnológicamente avanzada para luchar contra el crimen.
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="timeline-event" data-year="1966">
-        <img src="img/Marvel_superh.webp" alt="Marvel Superhéroes 1966">
-        <h3>1966</h3>
-        <p>Marvel Superhéroes</p>
+    <section id="cronologia" class="timeline-section">
+      <h2>Línea del Tiempo del Multiverso Marvel por orden de Estreno</h2>
+      <div class="timeline-container">
+        <div class="timeline-scroll">
+          <div class="timeline-event" data-year="1944">
+            <img src="img/pel/Capitanamerica1944.jpg" alt="Capitán América 1944">
+            <h3>1944</h3>
+            <p>Capitán América (Serial)</p>
+          </div>
+
+          <div class="timeline-event" data-year="1966">
+            <img src="img/pel/Marvel_superh.webp" alt="Marvel Superhéroes 1966">
+            <h3>1966</h3>
+            <p>Marvel Superhéroes</p>
+          </div>
+
+          <div class="timeline-event" data-year="1967">
+            <img src="img/pel/4_fantasticos.webp" alt="Los Cuatro Fantásticos 1967">
+            <h3>1967</h3>
+            <p>Los Cuatro Fantásticos</p>
+          </div>
+
+          <div class="timeline-event" data-year="2014">
+            <img src="img/pel/Captain_America_The_Winter_Soldier_Poster_3.webp" alt="Capitán América 2014">
+            <h3>2014</h3>
+            <p>Capitán América: El Soldado del Invierno</p>
+          </div>
+
+          <div class="timeline-event" data-year="2018">
+            <img src="img/pel/Black_Panther_Poster_October_2017.webp" alt="Pantera Negra">
+            <h3>2018</h3>
+            <p>Pantera Negra</p>
+          </div>
+
+          <div class="timeline-event" data-year="2024">
+            <img src="img/pel/xmen97.webp" alt="X-Men '97">
+            <h3>2024</h3>
+            <p>X-Men '97</p>
+          </div>
+        </div>
       </div>
-
-      <div class="timeline-event" data-year="1967">
-        <img src="img/4_fantasticos.webp" alt="Los Cuatro Fantásticos 1967">
-        <h3>1967</h3>
-        <p>Los Cuatro Fantásticos</p>
-      </div>
-
-      <div class="timeline-event" data-year="1967">
-        <img src="img/Spiderman67.webp" alt="El Hombre Araña 1967">
-        <h3>1967</h3>
-        <p>El Hombre Araña (Serie)</p>
-      </div>
-
-      <div class="timeline-event" data-year="1973">
-        <img src="img/3_Dev_Adam.jpg" alt="El Santo y Capitán América vs Spider-Man">
-        <h3>1973</h3>
-        <p>El Santo y Capitán América vs. Spider-Man</p>
-      </div>
-
-      <div class="timeline-event" data-year="1977">
-        <img src="img/Spiderman-1977-poster.webp" alt="El Sorprendente Hombre Araña 1977">
-        <h3>1977</h3>
-        <p>El Sorprendente Hombre Araña</p>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 CineVerseMarvel | Samuel SC</p>
   </footer>
-</body>
-</html>
 
-
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const timelineContainer = document.querySelector('.timeline-container');
+      if (timelineContainer) {
+        timelineContainer.addEventListener('wheel', (e) => {
+          e.preventDefault();
+          timelineContainer.scrollLeft += e.deltaY * 0.5;
+        });
+      }
+    });
+  </script>
+  </body>
+  </html>
